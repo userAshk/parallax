@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    font-family: sans-serif;
+}
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+
+section {
+    padding: 25vh 10%;
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    transform-style: inherit;
+}
+
+section,
+section:before {
+    background: 50% 50% / cover;
+}
+
+section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* The brightest duotone color */
+.darken::before {
+    background-color: rgba(221, 204, 0, 1);
+}
+
+/* The darkest duotone color */
+.lighten::after {
+    background-color: rgba(221, 0, 0, 1);
+}
+
+#hero-1:before {
+    background-image: url("https://images.immediate.co.uk/production/volatile/sites/4/2021/08/mountains-7ddde89.jpg?webp=true&quality=90&resize=940%2C399");
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+}
+
+#hero-2:before {
+    background-image: url("https://images.immediate.co.uk/production/volatile/sites/4/2021/08/GettyImages-484576000-c-bc46733.jpg?webp=true&quality=90&resize=620%2C284");
+    transform: translateZ(-1px) scale(2);
+    z-index: -2;
+}
+
+#hero-3:before {
+    background-image: url("https://iresizer.devops.arabiaweather.com/resize?url=https://adminassets.devops.arabiaweather.com/sites/default/files/field/image/mountains.jpg&size=850x478&force_jpg=1");
+    background-attachment: fixed;
+    z-index: -3;
+}
+
+.normal-scroll {
+    background: #fff;
+    transform: translateZ(0);
+}
+
+.container {
+    color: #ccc;
+    font-size: 4vw;
+    margin: 0 auto;
+    padding: 25vh 0;
+    text-align: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 14px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    #section-5:before {
+        background-attachment: scroll;
+    }
+}
